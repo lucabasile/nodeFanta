@@ -8,6 +8,7 @@ const reqListener = function (req,res){
     res.end('Hello World Again!');*/
 
     const url= req.url;
+    const method= req.method;
 
     if(url === '/insert'){
         res.write('<html>');
@@ -21,15 +22,25 @@ const reqListener = function (req,res){
         return res.end();
     }
 
+    if(url === '/message' && method === 'POST'){
+        console.log("You\'ve sent a message with a POST");
+        res.statusCode= 302; 
+        res.setHeader('Location','/');
+
+        //req.on('data')
+        //If I don't use the return the code breaks...WHY?
+        return res.end();
+    }
+
     res.setHeader('Content-Type','text/html');
     res.write('<html>');
     res.write('<head><title>A Simple page</title></head>');
     res.write('<body>');
     res.write('<h1 style="color:blue;background-color:cyan;text-align:center">Hello From Node</h1>');
-    res.write('<div>This is static page</div>');
+    res.write('<div>This is a static page</div>');
     res.write('</body>');
     res.write('</html>');
-    res.end();
+    return res.end();
 
 
 }

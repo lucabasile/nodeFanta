@@ -4,7 +4,9 @@
   "description": "A project for funa and for learning",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "server-start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/lucabasile/nodeFanta/issues"
   },
-  "homepage": "https://github.com/lucabasile/nodeFanta#readme"
+  "homepage": "https://github.com/lucabasile/nodeFanta#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
