@@ -1,0 +1,22 @@
+{
+  "name": "node-fanta",
+  "version": "1.0.0",
+  "description": "A project for funa and for learning",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucabasile/nodeFanta.git"
+  },
+  "keywords": [
+    "fantacalcio"
+  ],
+  "author": "Luca Basile",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucabasile/nodeFanta/issues"
+  },
+  "homepage": "https://github.com/lucabasile/nodeFanta#readme"
+}
