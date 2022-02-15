@@ -29,7 +29,9 @@ const reqListener = function (request,response){
         response.statusCode= 302; 
         response.setHeader('Location','/');
 
-        request.on('data',()=>{console.log('I\'ve finished receiving your message')});
+        request.on('data',()=>{console.log(' receiving your message')})
+        .on('end',()=>{console.log('*******message received!')});
+
         console.log("You\'ve sent a message with a POST");
         //If I don't use the return the code breaks...WHY?
         return response.end();
