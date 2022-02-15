@@ -17,7 +17,7 @@ const reqListener = function (request,response){
         response.write('<head><title>A Simple form</title></head>');
         response.write('<body>');
         response.write('<h1 style="color:blue;background-color:orange;text-align:center">Enter Data</h1>');
-        response.write('<div><form action="/message" method="POST"><input type="text" name="message"/><button>Send</button></form></div>');
+        response.write('<div><form action="/message" method="POST"><input type="file" name="message"/><button>Send</button></form></div>');
         response.write('</body>');
         response.write('</html>');
         //If I don't use the return the code breaks...WHY?
