@@ -1,5 +1,7 @@
 const http = require('http');
 
+const port = process.env.PORT || 3000
+
 /*this function can have any name, it just need a couple of arguments
 (you can give them any name but the first is always the request and rhe second the response)
 */
@@ -25,7 +27,7 @@ const reqListener = function (request,response){
     if(url === '/message' && method === 'POST'){
         
         response.statusCode= 302; 
-        response.setHeader('Location','/insert');
+        response.setHeader('Location','/');
 
         request.on('data',()=>{console.log('I\'ve finished receiving your message')});
         console.log("You\'ve sent a message with a POST");
@@ -48,4 +50,4 @@ const reqListener = function (request,response){
 
 const server = http.createServer(reqListener);
 
-server.listen(3000);
+server.listen(port);
