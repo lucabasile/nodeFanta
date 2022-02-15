@@ -32,6 +32,7 @@ const reqListener = function (request,response){
         request.on('data',(chunk)=>{
             console.log(' receiving your message');
             body.push(chunk);
+            console.log('body size = '+body.length);
         })
         .on('end',()=>{
             const theBody=Buffer.concat(body).toString();
