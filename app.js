@@ -1,9 +1,9 @@
 const http = require('http');
-const funzica= require('./routes');
 const express= require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const FantaTeam= require('./models/fantateam');
+const { Console } = require('console');
 
 
 const port = process.env.PORT || 3000
@@ -19,16 +19,15 @@ app.use((req,res,next)=>{
     next();
 });
 
-
-
-/*app.get('/ciao',(req,res)=>{
-    res.end('Ciao a tutti');
+app.use((req,res,next)=>{
+    console.log("ultimo middleware generico");
+    next();
 });
 
-app.post('/postalo',(req,res)=>{
-    console.log('Il campo era '+req.body.campo);
-    res.sendStatus(200);
-});*/
+app.get('/fantateam',(req,res,next)=>{
+    console.log('primo middleware di fatntateam');
+    next();
+});
 
 app.get('/fantateam',(req,res)=>{
     //const filter = {};
@@ -58,6 +57,11 @@ app.post('/fantateam',(req,res)=>{
         }
    });
 
+});
+
+app.get('/users',(req,res)=>{
+    res.send('ciao');
+    res.end();
 });
 
 const server = http.createServer(app);
