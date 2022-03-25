@@ -1,5 +1,5 @@
 const mongoose = require('../configs/mongoose');
-const 
+
 
 const formationSchema = new mongoose.Schema({
     titolari:[String],
